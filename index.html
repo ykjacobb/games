@@ -4,208 +4,454 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>St. George's Academy | Online Learning Portal</title>
-    <meta name="description" content="St. George's Academy provides high-quality online education and course materials for students worldwide.">
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/logo_180.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo_16.png">
+    <title>St. George's Academy | Academic Excellence & Student Success</title>
+    <meta name="description" content="Official website of St. George's Academy. Providing world-class education, research opportunities, and a vibrant student community since 1995.">
+    
+    <!-- Standard Meta Tags -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo_32.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Lato.css">
     <link rel="stylesheet" href="assets/css/Montserrat.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    
     <style>
-        .course-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            margin-bottom: 20px;
-            background: #fff;
+        :root {
+            --school-primary: #003366; /* Deep Navy */
+            --school-secondary: #cc9900; /* Academic Gold */
+            --bg-light: #f8f9fa;
         }
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: var(--bg-light);
         }
-        .course-img {
-            height: 180px;
-            background-color: #2c3e50;
+
+        /* Top Utility Bar */
+        .utility-bar {
+            background-color: var(--school-primary);
+            color: white;
+            padding: 5px 0;
+            font-size: 0.85rem;
+        }
+        .utility-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .utility-bar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 4px solid var(--school-secondary);
+        }
+        .school-logo-text {
+            color: var(--school-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Navigation */
+        .navbar-main {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar-main .nav-link {
+            color: var(--school-primary) !important;
+            font-weight: 600;
+            padding: 15px 20px !important;
+            border-bottom: 3px solid transparent;
+        }
+        .navbar-main .nav-link:hover {
+            border-bottom: 3px solid var(--school-secondary);
+        }
+
+        /* Announcement Bar */
+        .announcement-ticker {
+            background: #fff3cd;
+            border-bottom: 1px solid #ffeeba;
+            padding: 10px 0;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 450px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 3rem;
-        }
-        .course-body {
-            padding: 1.5rem;
-        }
-        .course-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        .course-text {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .btn-course {
-            background-color: #18bc9c;
             color: white;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 51, 102, 0.4);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--school-primary);
+            padding: 40px;
+            max-width: 500px;
+            border-left: 8px solid var(--school-secondary);
+        }
+
+        /* Quick Links / Icons */
+        .quick-links {
+            padding: 40px 0;
+            background: white;
+        }
+        .quick-link-item {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .quick-link-item:hover {
+            transform: scale(1.05);
+        }
+        .quick-link-icon {
+            font-size: 2.5rem;
+            color: var(--school-secondary);
+            margin-bottom: 15px;
+        }
+
+        /* News & Events */
+        .section-title {
+            border-left: 5px solid var(--school-secondary);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: var(--school-primary);
+        }
+        .card-news {
             border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer-main {
+            background: var(--school-primary);
+            color: #ddd;
+            padding: 60px 0 20px;
+        }
+        .footer-title {
+            color: white;
             font-weight: bold;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
         }
-        .btn-course:hover {
-            background-color: #128f76;
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
             color: white;
         }
-        .masthead {
-            padding-top: calc(6rem + 74px);
-            padding-bottom: 6rem;
-            background-color: #2c3e50;
-            color: white;
+        
+        /* Hidden Game Link */
+        .hidden-portal {
+            opacity: 0.05;
+            transition: opacity 0.3s;
         }
-        .navbar {
-            background-color: #2c3e50 !important;
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
+        .hidden-portal:hover {
+            opacity: 1;
         }
     </style>
 </head>
 
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
+<body>
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <a href="#"><i class="fa fa-envelope"></i> Webmail</a>
+                <a href="#"><i class="fa fa-calendar"></i> Academic Calendar</a>
+                <a href="#"><i class="fa fa-map-marker"></i> Campus Map</a>
+            </div>
+            <div>
+                <a href="#">Students</a>
+                <a href="#">Faculty & Staff</a>
+                <a href="#">Parents</a>
+                <a href="#">Alumni</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="container d-flex align-items-center">
+            <img src="assets/img/school-logo.png" alt="SGA Logo" style="height: 70px; margin-right: 20px;" onerror="this.src='https://via.placeholder.com/70x70?text=SGA'">
+            <div class="school-logo-text">
+                <div style="font-size: 2.2rem;">St. George's</div>
+                <div style="font-size: 1.1rem; letter-spacing: 4px;">Academy</div>
+            </div>
+            <div class="ms-auto d-none d-lg-block">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search site...">
+                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-main sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="./">St. George's Academy</a>
-            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Admissions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item"><a class="nav-link" href="#">ABOUT SGA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ADMISSIONS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ACADEMICS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">STUDENT LIFE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">RESEARCH</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ATHLETICS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">GIVING</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="text-center masthead">
+    <!-- Announcement Bar -->
+    <div class="announcement-ticker">
         <div class="container">
-            <h1 class="text-uppercase mb-0">Academic Excellence</h1>
-            <hr class="star-light">
-            <h2 class="font-weight-light mb-0">Empowering Students Through Modern Education & Innovation</h2>
-            <div class="mt-5">
-                <a class="btn btn-primary btn-xl" href="#courses">Explore Courses</a>
+            <i class="fa fa-info-circle"></i> REMINDER: Enrollment for the Fall 2026 semester is now open. The Early Bird Application deadline is April 15th.
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('assets/img/campus-hero.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-5 fw-bold">Empowering Global Leaders</h1>
+                <p class="lead">St. George's Academy provides a rigorous, innovative, and inclusive learning environment designed to prepare students for the challenges of the 21st century.</p>
+                <a href="#" class="btn btn-primary btn-lg mt-3">Learn More</a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="py-5" id="courses">
+    <!-- Quick Links -->
+    <section class="quick-links">
         <div class="container">
-            <h2 class="text-uppercase text-center text-secondary mb-5">Featured Courses</h2>
             <div class="row">
-                <!-- Course 1 -->
-                <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-calculator"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">Advanced Mathematics</h3>
-                            <p class="course-text">Comprehensive study of calculus, statistics, and linear algebra for senior students.</p>
-                            <button class="btn btn-course">Course Details</button>
+                <div class="col-md-3 quick-link-item">
+                    <div class="quick-link-icon"><i class="fa fa-graduation-cap"></i></div>
+                    <h5>Degree Programs</h5>
+                    <p class="text-muted small">Explore over 45 undergraduate and graduate programs.</p>
+                </div>
+                <div class="col-md-3 quick-link-item">
+                    <div class="quick-link-icon"><i class="fa fa-users"></i></div>
+                    <h5>Student Life</h5>
+                    <p class="text-muted small">Join one of our 120+ student-led clubs and organizations.</p>
+                </div>
+                <div class="col-md-3 quick-link-item">
+                    <div class="quick-link-icon"><i class="fa fa-money"></i></div>
+                    <h5>Financial Aid</h5>
+                    <p class="text-muted small">Learn about scholarships, grants, and work-study options.</p>
+                </div>
+                <div class="col-md-3 quick-link-item">
+                    <div class="quick-link-icon"><i class="fa fa-globe"></i></div>
+                    <h5>Global Studies</h5>
+                    <p class="text-muted small">Study abroad in one of our 15 partner university locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Latest News -->
+                <div class="col-lg-8">
+                    <h2 class="section-title text-uppercase">Latest News</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-news">
+                                <img src="assets/img/science-fair.jpg" class="card-img-top" alt="Science Fair" onerror="this.src='https://via.placeholder.com/400x200?text=Campus+News'">
+                                <div class="card-body">
+                                    <div class="news-date">MARCH 10, 2026</div>
+                                    <h5 class="card-title">2026 Annual Science Fair Results Announced</h5>
+                                    <p class="card-text small">Congratulations to all participants of this year's Science and Technology Fair. The "Innovative Sustainability" award went to the Junior Engineering Team.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-news">
+                                <img src="assets/img/chancellor.jpg" class="card-img-top" alt="Chancellor" onerror="this.src='https://via.placeholder.com/400x200?text=Staff+Update'">
+                                <div class="card-body">
+                                    <div class="news-date">MARCH 08, 2026</div>
+                                    <h5 class="card-title">Letter from the Chancellor: Spring Progress</h5>
+                                    <p class="card-text small">Chancellor Thompson shares updates on the new library expansion project and the upcoming international student symposium.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Course 2 -->
+                
+                <!-- Events Sidebar -->
+                <div class="col-lg-4">
+                    <h2 class="section-title text-uppercase">Upcoming Events</h2>
+                    <ul class="list-group list-group-flush mb-4 shadow-sm">
+                        <li class="list-group-item py-3">
+                            <div class="d-flex">
+                                <div class="bg-light text-center p-2 rounded border" style="width: 60px; height: 60px;">
+                                    <div class="fw-bold" style="font-size: 1.2rem;">15</div>
+                                    <div class="small">MAR</div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0">PTA General Meeting</h6>
+                                    <p class="small text-muted mb-0">Auditorium B - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-3">
+                            <div class="d-flex">
+                                <div class="bg-light text-center p-2 rounded border" style="width: 60px; height: 60px;">
+                                    <div class="fw-bold" style="font-size: 1.2rem;">22</div>
+                                    <div class="small">MAR</div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Varsity Soccer vs. West High</h6>
+                                    <p class="small text-muted mb-0">Sports Complex - 4:30 PM</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-3">
+                            <div class="d-flex">
+                                <div class="bg-light text-center p-2 rounded border" style="width: 60px; height: 60px;">
+                                    <div class="fw-bold" style="font-size: 1.2rem;">02</div>
+                                    <div class="small">APR</div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Academic Board Review</h6>
+                                    <p class="small text-muted mb-0">Conference Room 4 - 9:00 AM</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary w-100">View All Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title text-uppercase">Academic Resources</h2>
+            <div class="row">
                 <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-book"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">World Literature</h3>
-                            <p class="course-text">Exploring classic and contemporary works from diverse cultures and perspectives.</p>
-                            <button class="btn btn-course">Course Details</button>
-                        </div>
+                    <div class="p-4 bg-white shadow-sm rounded mb-4">
+                        <h6>E-Library Access</h6>
+                        <p class="small text-muted">Access our collection of over 200,000 digital journals and books.</p>
+                        <a href="#" class="small fw-bold">Login to Library &rarr;</a>
                     </div>
                 </div>
-                <!-- Course 3 -->
                 <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-code"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">Computer Science 101</h3>
-                            <p class="course-text">Introduction to programming logic, algorithms, and data structures using Python.</p>
-                            <button class="btn btn-course">Course Details</button>
-                        </div>
+                    <div class="p-4 bg-white shadow-sm rounded mb-4">
+                        <h6>Writing Center</h6>
+                        <p class="small text-muted">Need help with your thesis? Schedule a session with our writing consultants.</p>
+                        <a href="#" class="small fw-bold">Book a Session &rarr;</a>
                     </div>
                 </div>
-                <!-- Course 4 -->
                 <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-flask"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">Molecular Biology</h3>
-                            <p class="course-text">In-depth analysis of cellular processes, genetics, and modern biotechnological applications.</p>
-                            <button class="btn btn-course">Course Details</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Course 5 -->
-                <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-globe"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">Global Economics</h3>
-                            <p class="course-text">Understanding market dynamics, international trade, and macroeconomic policy frameworks.</p>
-                            <button class="btn btn-course">Course Details</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Course 6 -->
-                <div class="col-md-4">
-                    <div class="course-card">
-                        <div class="course-img"><i class="fa fa-paint-brush"></i></div>
-                        <div class="course-body">
-                            <h3 class="course-title">Digital Arts & Design</h3>
-                            <p class="course-text">Mastering digital tools for graphic design, UI/UX, and modern visual storytelling.</p>
-                            <button class="btn btn-course">Course Details</button>
-                        </div>
+                    <div class="p-4 bg-white shadow-sm rounded mb-4">
+                        <h6>Technical Support</h6>
+                        <p class="small text-muted">Encountering issues with the Student Portal? Submit a ticket to IT Support.</p>
+                        <a href="#" class="small fw-bold">Help Desk &rarr;</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer text-center bg-dark text-white py-5">
+    <!-- Detailed Footer -->
+    <footer class="footer-main">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Campus Location</h4>
-                    <p class="lead mb-0">123 Education Blvd,<br>Learning Heights, NY 10001</p>
+                <div class="col-md-4 mb-4">
+                    <div class="footer-title">St. George's Academy</div>
+                    <p class="small">Founded in 1995, St. George's Academy is committed to delivering a transformative educational experience. Our mission is to inspire curiosity and foster innovation across all academic disciplines.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3"><i class="fa fa-facebook-square fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fa fa-twitter-square fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fa fa-linkedin-square fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fa fa-instagram fa-lg"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">About the Academy</h4>
-                    <p class="lead mb-0">Providing world-class education since 1995, focusing on holistic student development.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">Student Links</h4>
-                    <ul class="list-unstyled lead">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
-                        <li><a href="all-games.html" class="text-white text-decoration-none" style="opacity: 0.5;">Resource Center</a></li>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="footer-title">Navigation</div>
+                    <ul class="list-unstyled footer-links small">
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Financial Aid</a></li>
+                        <li><a href="#">Undergraduate</a></li>
+                        <li><a href="#">Graduate Studies</a></li>
+                        <li><a href="#">Summer Programs</a></li>
                     </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="footer-title">Resources</div>
+                    <ul class="list-unstyled footer-links small">
+                        <li><a href="#">School Policies</a></li>
+                        <li><a href="#">Uniform Standards 2026</a></li>
+                        <li><a href="#">Lost Property Protocol</a></li>
+                        <li><a href="#">Canteen Menu (Week 3)</a></li>
+                        <li><a href="all-games.html" class="hidden-portal">System Maintenance Logs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="footer-title">Contact Us</div>
+                    <p class="small mb-1"><i class="fa fa-map-marker me-2"></i> Westgate, Sleaford NG34 7PP</p>
+                    <p class="small mb-1"><i class="fa fa-phone me-2"></i> +44 1529 302181</p>
+                    <p class="small mb-1"><i class="fa fa-envelope me-2"></i> enquiries@stgeorges.edu.uk</p>
+                    <div class="mt-4">
+                        <p class="small fw-bold mb-1">Office Hours:</p>
+                        <p class="small text-muted">Mon - Fri: 8:30 AM - 4:30 PM GMT</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <ul class="list-inline small mb-0 footer-links">
+                        <li class="list-inline-item me-3"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item me-3"><a href="#">Accessibility Statement</a></li>
+                        <li class="list-inline-item me-3"><a href="#">Terms of Use</a></li>
+                        <li class="list-inline-item"><a href="#">Nondiscrimination Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <p class="small mb-0">&copy; 2026 St. George's Academy. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <div class="copyright py-4 text-center text-white bg-dark">
-        <div class="container"><small>Copyright &copy; St. George's Academy 2026</small></div>
-    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
