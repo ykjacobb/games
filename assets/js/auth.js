@@ -5,9 +5,10 @@
     const isAuthenticated = sessionStorage.getItem('sga_auth') === 'true';
     
     // Check if the current page is a game page
-    const isGamePage = window.location.pathname.includes('-unblocked.html');
-    const isAllGames = window.location.pathname.includes('all-games.html');
-    const isCategory = window.location.pathname.includes('-games.html');
+    const pageName = window.location.pathname.split('/').pop();
+    const isGamePage = /^[0-9]+\.html$/.test(pageName);
+    const isAllGames = pageName === 'all-games.html';
+    const isCategory = pageName && pageName.endsWith('-games.html');
 
     if (isGamePage || isAllGames || isCategory) {
         if (!isAuthenticated) {
