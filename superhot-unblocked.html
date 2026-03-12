@@ -11,9 +11,6 @@
         body { background: #000; margin: 0; padding: 0; overflow: hidden; }
         #unity-container { width: 100%; height: 100vh; position: relative; }
         #canvas { width: 100%; height: 100%; background: #231f20; }
-        #loading-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; z-index: 10; }
-        .progress-bar { width: 250px; height: 10px; background: #333; border-radius: 5px; margin-top: 20px; border: 1px solid #444; }
-        .progress-fill { width: 0%; height: 100%; background: #cc9900; border-radius: 5px; transition: width 0.3s; }
         .back-btn { position: fixed; top: 20px; left: 20px; z-index: 100; opacity: 0.3; transition: opacity 0.3s; color: white; border-color: white; }
         .back-btn:hover { opacity: 1; background: rgba(255,255,255,0.1); }
     </style>
@@ -24,11 +21,6 @@
 
     <div id="unity-container">
         <canvas id="canvas"></canvas>
-        <div id="loading-overlay">
-            <h3 id="game-title">Loading SUPERHOT...</h3>
-            <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
-            <p id="loading-text" class="small mt-2">Initializing System Assets...</p>
-        </div>
     </div>
 
     <script>
@@ -42,21 +34,7 @@
             memUrl: "apps/superhot/webgl.mem",
             graphicsMemory: 128,
             isIndexDB: false,
-            canvas: document.getElementById("canvas"),
-            onProgress: function(canvas, progress) {
-                const progressFill = document.querySelector("#progress-fill");
-                const loadingText = document.querySelector("#loading-text");
-                if (typeof progress === "number") {
-                    progressFill.style.width = (100 * progress) + "%";
-                    loadingText.textContent = "Downloading Content: " + Math.round(progress * 100) + "%";
-                } else if (progress === "All downloads complete.") {
-                    setTimeout(() => {
-                        document.querySelector("#loading-overlay").style.display = "none";
-                    }, 500);
-                } else if (progress) {
-                    loadingText.textContent = progress;
-                }
-            }
+            canvas: document.getElementById("canvas")
         };
     </script>
     <script src="apps/superhot/UnityLoader.js"></script>
