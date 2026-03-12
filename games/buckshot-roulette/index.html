@@ -127,10 +127,6 @@ const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
-    // Override the engine's internal path for the WASM file if needed
-    // Note: Godot 4 typically loads the .wasm based on the 'executable' name.
-    // If it fails, we might need to modify the loader logic.
-}());
 	const statusOverlay = document.getElementById('status');
 	const statusProgress = document.getElementById('status-progress');
 	const statusNotice = document.getElementById('status-notice');

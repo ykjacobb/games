@@ -61,8 +61,9 @@ DoSearch= function(searchQuery) {
 
 
 SearchQueryChange= function() {
-    if (!globalSearchBusy && globalSearchQuery!= $("#searchInput").val()) {
-        globalSearchQuery= $("#searchInput").val();        
+    let inputVal = $("#searchInput").val();
+    if (!globalSearchBusy && inputVal !== undefined && globalSearchQuery != inputVal) {
+        globalSearchQuery = inputVal;        
         DoSearch(globalSearchQuery.trim());
     }    
 }
