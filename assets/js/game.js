@@ -3,6 +3,10 @@ window.addEventListener("load", (event) => {
     const gameName= gameFrame?.name ?? "";
     if (gameName!= "") {
         console.log("LoadGame", gameName);
-        gameFrame.src= `https://ubg17.github.io/${gameName}/`;
+        if (gameName === "PaperIO2") {
+            gameFrame.src= "games/paperio2/index.html";
+        } else {
+            gameFrame.src= `https://ubg17.github.io/${gameName}/`;
+        }
     }    
 });
