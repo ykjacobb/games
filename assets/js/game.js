@@ -6,7 +6,8 @@ window.addEventListener("load", (event) => {
         const localGames = {
             "PaperIO2": "games/paperio2/index.html",
             "Cubes2048IO": "games/cubes2048/index.html",
-            "NitroKnightsIO": "games/nitroknights/index.html"
+            "NitroKnightsIO": "games/nitroknights/index.html",
+            "BuckshotRoulette": "games/buckshot-roulette/index.html"
         };
         if (localGames[gameName]) {
             gameFrame.src = localGames[gameName];
